@@ -5,6 +5,12 @@
   cursor: pointer;
 }
 
+.TodoListItem p {
+  flex: 1;
+  margin: 0;
+  padding: 16px 0;
+}
+
 .TodoListItem.checked p {
   text-decoration: line-through;
   color: #999;

@@ -34,7 +34,33 @@ function App() {
     },
     [todos]
   )
-  return <TodoForm todos={todos} onInsert={onInsert} />
+
+  const onToggle = useCallback(
+    id => {
+      setTodos(
+        todos.map(todo =>
+          todo.id === id ? { ...todo, done: !todo.done } : todo
+        )
+      )
+    },
+    [todos]
+  )
+
+  const onRemove = useCallback(
+    id => {
+      setTodos(todos.filter(todo => todo.id !== id))
+    },
+    [todos]
+  )
+
+  return (
+    <TodoForm
+      todos={todos}
+      onInsert={onInsert}
+      onRemove={onRemove}
+      onToggle={onToggle}
+    />
+  )
 }
 
 export default App

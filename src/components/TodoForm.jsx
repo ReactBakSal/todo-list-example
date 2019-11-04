@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import TodoList from "./TodoList"
 import "./TodoForm.css"
 
-function TodoForm({ todos, onInsert }) {
+function TodoForm({ todos, onInsert, onToggle, onRemove }) {
   const [value, setValue] = useState("")
   const onSubmit = e => {
     e.preventDefault()
@@ -18,7 +18,7 @@ function TodoForm({ todos, onInsert }) {
           onChange={e => setValue(e.target.value)}
           placeholder="할 일을 입력하세요"
         />
-        <TodoList todos={todos} />
+        <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove} />
       </form>
     </div>
   )
