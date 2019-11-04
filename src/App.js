@@ -1,8 +1,9 @@
 import React from "react"
 import "./App.css"
+import TodoForm from "./components/TodoForm"
 
 function App() {
-  return <div>Todo List</div>
+  return <TodoForm />
 }
 
 export default App
