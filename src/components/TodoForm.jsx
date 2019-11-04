@@ -5,7 +5,7 @@ import "./TodoForm.css"
 
 function TodoForm() {
   return (
-    <div className="container">
+    <div className="TodoForm">
       <form>
         <h1>Todo List</h1>
         <TodoInsert />
