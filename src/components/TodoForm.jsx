@@ -1,15 +1,24 @@
-import React from "react"
-import TodoInsert from "./TodoInsert"
+import React, { useState } from "react"
 import TodoList from "./TodoList"
 import "./TodoForm.css"
 
-function TodoForm() {
+function TodoForm({ todos, onInsert }) {
+  const [value, setValue] = useState("")
+  const onSubmit = e => {
+    e.preventDefault()
+    onInsert(value)
+    setValue("")
+  }
   return (
     <div className="TodoForm">
-      <form>
+      <form onSubmit={onSubmit}>
         <h1>Todo List</h1>
-        <TodoInsert />
-        <TodoList />
+        <input
+          value={value}
+          onChange={e => setValue(e.target.value)}
+          placeholder="할 일을 입력하세요"
+        />
+        <TodoList todos={todos} />
       </form>
     </div>
   )

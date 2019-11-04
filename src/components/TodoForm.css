@@ -3,3 +3,12 @@
   width: 560px;
   margin: 0 auto;
 }
+
+.TodoForm input {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 40px;
+
+  padding: 16px 10px;
+}
