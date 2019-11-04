@@ -7,4 +7,4 @@ $ npm install
 $ npm run start
 ```
 
-Then, You could enter react todo sample via loacalhost:3000
+Then, You could enter react todo sample via `loacalhost:3000`
